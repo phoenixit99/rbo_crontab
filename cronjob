@@ -1,0 +1,2 @@
+# Run the script every minute
+* * * * * /app/check_port.sh >> /var/log/check_port.log 2>&1
