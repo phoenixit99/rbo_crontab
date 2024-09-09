@@ -72,11 +72,11 @@ cat > auto.sh <<EOL
 SCRIPT_PATH="$HOME/rbo_crontab/check_port.sh"
 if [ ! -f "$SCRIPT_PATH" ]; then
     echo -e "#!/bin/bash\necho \"This is my script running!\" >> $HOME/rbo_crontab/output.log" > "$SCRIPT_PATH"
-    chmod +x "$SCRIPT_PATH"
+    chmod +x $HOME/rbo_crontab/check_port.sh
 fi
 
 # Add the cron job
-CRON_JOB="* * * * * $SCRIPT_PATH"
+CRON_JOB="* * * * * $HOME/rbo_crontab/check_port.sh"
 (crontab -l; echo "$CRON_JOB") | crontab -
 echo "Cron job added: $CRON_JOB"
 EOL
