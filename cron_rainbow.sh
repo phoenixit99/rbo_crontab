@@ -65,25 +65,14 @@ fi
 
 EOL
 
-cat > auto.sh <<EOL
-#!/bin/bash
-
-if [ ! -f "$SCRIPT_PATH" ]; then
-    echo -e "#!/bin/bash\necho \"This is my script running!\" >> $HOME/rbo_crontab/output.log" > $HOME/rbo_crontab/check_port.sh
-    chmod +x $HOME/rbo_crontab/check_port.sh
-fi
-
-# Add the cron job
-CRON_JOB="* * * * * $HOME/rbo_crontab/check_port.sh"
-(crontab -l; echo "$CRON_JOB") | crontab -
-echo "Cron job added: $CRON_JOB"
-EOL
  # For permision run file
 chmod +x check_port.sh
- # For permision create cronjob 
-chmod +x auto.sh
  # For create file logs
 touch output.log
+
+curl -L -o auto.sh https://github.com/phoenixit99/rbo_crontab/raw/main/auto.sh
+
+chmod +x auto.sh
 
 ./auto.sh
 
