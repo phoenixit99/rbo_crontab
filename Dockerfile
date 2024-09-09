@@ -8,13 +8,13 @@ RUN apt-get update && apt-get install -y cron netcat-openbsd
 WORKDIR /app_rainbow
 
 # Copy the shell script and cron job file
-COPY check_port.sh /app_rainbow/check_port.sh
+COPY check_port.sh /usr/local/bin/check_port.sh
 COPY cronjob /etc/cron.d/cronjob
 
 # Give execution rights on the script and cron job
-RUN chmod +x /app_rainbow/check_port.sh
-RUN chmod 0644 /etc/cron.d/cronjob
-
+#RUN chmod +x /app_rainbow/check_port.sh
+#RUN chmod 0644 /etc/cron.d/cronjob
+RUN chmod +x /usr/local/bin/check_port.sh
 # Apply the cron job
 RUN crontab /etc/cron.d/cronjob
 
