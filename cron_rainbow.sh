@@ -23,8 +23,8 @@ cd rbo_crontab
 # Prompt user for input
 read -p "Enter your username: " username
 read -s -p "Enter your password: " password
-read -p "Enter the lastest block : " blocks
 echo ""
+read -p "Enter the lastest block : " blocks
 
 # Ensure username, password, and wallet name are not empty
 if [[ -z "$username" || -z "$password"  ]]; then
