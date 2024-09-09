@@ -2,7 +2,7 @@
 FROM python:3.9-slim
 
 # Install necessary tools
-RUN apt-get update && apt-get install -y cron netcat
+RUN apt-get update && apt-get install -y cron netcat-openbsd
 
 # Set the working directory
 WORKDIR /app_rainbow
