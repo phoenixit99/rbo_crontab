@@ -58,9 +58,9 @@ cat > check_port.sh <<EOL
 # Check if port 5050 is in use
 if ! nc -z localhost 5050; then
     echo "Port 5050 is not in use. Starting the server..." >> $HOME/rbo_crontab/output.log
-    cd $HOME/rainbown/rbo_indexer_testnet && ./rbo_worker worker --rpc http://localhost:5000 --password $password --username $username --start_height $blocks
     echo "Run start by command..."
-    echo "$HOME/rainbown/rbo_indexer_testnet && ./rbo_worker worker --rpc http://localhost:5000 --password $password --username $username --start_height $blocks"
+    echo "cd $HOME && cd rainbown && cd rbo_indexer_testnet && ./rbo_worker worker --rpc http://localhost:5000 --password $password --username $username --start_height $blocks"
+    cd $HOME && cd rainbown && cd rbo_indexer_testnet && ./rbo_worker worker --rpc http://localhost:5000 --password $password --username $username --start_height $blocks
 else
     echo "Port 5050 is already in use." >> $HOME/rbo_crontab/output.log
 fi
