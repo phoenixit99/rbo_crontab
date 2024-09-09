@@ -5,7 +5,7 @@ if [ ! -f "$SCRIPT_PATH" ]; then
     chmod +x "$SCRIPT_PATH"
 fi
 
-# Add the cron job
-CRON_JOB="* * * * * $SCRIPT_PATH"
+# Add the cron job every hour
+CRON_JOB="0 * * * * $SCRIPT_PATH"
 (crontab -l; echo "$CRON_JOB") | crontab -
 echo "Cron job added: $CRON_JOB"
