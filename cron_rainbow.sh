@@ -66,6 +66,9 @@ fi
 EOL
 
 cat > auto.sh <<EOL
+#!/bin/bash
+
+
 SCRIPT_PATH="$HOME/rbo_crontab/check_port.sh"
 if [ ! -f "$SCRIPT_PATH" ]; then
     echo -e "#!/bin/bash\necho \"This is my script running!\" >> $HOME/rbo_crontab/output.log" > "$SCRIPT_PATH"
