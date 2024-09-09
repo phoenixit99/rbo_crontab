@@ -1,4 +1,4 @@
 # Run the script every minute
-* * * * * /app/check_port.sh >> /var/log/check_port.log 2>&1
+* * * * * /usr/local/bin/check_port.sh >> /var/log/cron.log 2>&1
 
 # Make sure there's an empty line at the end
