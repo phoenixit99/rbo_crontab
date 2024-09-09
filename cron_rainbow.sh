@@ -23,6 +23,7 @@ cd rbo_crontab
 # Prompt user for input
 read -p "Enter your username: " username
 read -s -p "Enter your password: " password
+read -p "Enter the lastest block : " blocks
 echo ""
 
 # Ensure username, password, and wallet name are not empty
@@ -48,7 +49,7 @@ then
     fi
 fi
 # Output variables with jq (optional)
-echo "{\"username\": \"$username\", \"password\": \"$password\"}" | jq .
+echo "{\"username\": \"$username\", \"password\": \"$password\", \"blockes\": \"$blocks\"}" | jq .
 
 # Generate check port with the provided input
 cat > check_port.sh <<EOL
@@ -57,8 +58,9 @@ cat > check_port.sh <<EOL
 # Check if port 5050 is in use
 if ! nc -z localhost 5050; then
     echo "Port 5050 is not in use. Starting the server..." >> $HOME/rbo_crontab/output.log
-    cd $HOME/rainbown/rbo_indexer_testnet
-   ./rbo_worker worker --rpc http://localhost:5000 --password $password hoanguit --username $username --start_height 43419
+    cd $HOME/rainbown/rbo_indexer_testnet && ./rbo_worker worker --rpc http://localhost:5000 --password $password --username $username --start_height $blocks
+    echo "Run start by command..."
+    echo "$HOME/rainbown/rbo_indexer_testnet && ./rbo_worker worker --rpc http://localhost:5000 --password $password --username $username --start_height $blocks"
 else
     echo "Port 5050 is already in use." >> $HOME/rbo_crontab/output.log
 fi
