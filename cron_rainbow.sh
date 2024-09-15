@@ -1,16 +1,16 @@
 #!/bin/bash
-echo "                                                                   "
-echo "                                                                   "
-echo "                                                                   "
-echo "                                                                   "
-echo "  H   H  EEEEE  N   N  RRRR   Y    Y     N   N  OOO   DDDD   EEEEE "
-echo "  H   H  E      NN  N  R   R    Y Y      NN  N O   O  D   D  E     "
-echo "  HHHHH  EEEE   N N N  RRRR      Y       N N N O   O  D   D  EEEE  "
-echo "  H   H  E      N  NN  R  R      Y       N  NN O   O  D   D  E     "
-echo "  H   H  EEEEE  N   N  R   R     Y       N   N  OOO   DDDD   EEEEE "
-echo "                                                                   "
-echo "                                                                   "
-echo "                                                                   "
+echo "                                                                    "
+echo "                                                                    "
+echo "                                                                    "
+echo "                                                                    "
+echo "  H   H  EEEEE  N   N  RRRR   Y    Y     N   N  OOO   DDDD   EEEEE  "
+echo "  H   H  E      NN  N  R   R    Y Y      NN  N O   O  D   D  E      "
+echo "  HHHHH  EEEE   N N N  RRRR      Y       N N N O   O  D   D  EEEE   "
+echo "  H   H  E      N  NN  R  R      Y       N  NN O   O  D   D  E      "
+echo "  H   H  EEEEE  N   N  R   R     Y       N   N  OOO   DDDD   EEEEE  "
+echo "                                                                    "
+echo "                                                                    "
+echo "                                                                    "
 
 set -e  # Exit script on error
 

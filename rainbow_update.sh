@@ -50,8 +50,8 @@ fi
 # Output variables with jq (optional)
 echo "{\"username\": \"$username\", \"password\": \"$password\", \"blockes\": \"$blocks\"}" | jq .
 
-rm -r rbo_indexer_testnet
-git clone https://github.com/rainbowprotocol-xyz/rbo_indexer_testnet.git && cd rbo_indexer_testnet
+cd rbo_indexer_testnet
+git pull https://github.com/rainbowprotocol-xyz/rbo_indexer_testnet.git
 
 wget https://storage.googleapis.com/rbo/rbo_worker/rbo_worker-linux-amd64-0.0.2-20240914-4ec80a8.tar.gz && tar -xzvf rbo_worker-linux-amd64-0.0.2-20240914-4ec80a8.tar.gz
 rm rbo_worker-linux-amd64-0.0.2-20240914-4ec80a8.tar.gz
@@ -62,6 +62,5 @@ rm -r rbo_worker-linux-amd64-0.0.2-20240914-4ec80a8
 
 
 echo "Script completed successfully."
-
 
 
